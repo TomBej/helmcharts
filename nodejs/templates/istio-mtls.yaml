@@ -1,0 +1,13 @@
+{{- if .Values.istio.enabled }}
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: {{ .Release.Name}}-mtls
+  labels:
+    {{- include "libchart.labels" . | nindent 4 }}
+spec:
+  host: {{ template "libchart.name" . }}
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
+{{- end }}

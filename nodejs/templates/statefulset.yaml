@@ -1,0 +1,3 @@
+{{ if eq .Values.deployKind "statefulset" }}
+{{- include "libchart.statefulset.tpl" . -}}
+{{- end }}

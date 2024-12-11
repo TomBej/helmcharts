@@ -1,0 +1,3 @@
+{{- if .Values.podDisruptionBudget -}}
+{{- include "libchart.pdb.tpl" . -}}
+{{- end }}

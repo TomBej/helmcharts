@@ -1,0 +1,3 @@
+{{- if .Values.cert.enabled -}}
+{{- include "libchart.cm-certificate.tpl" . }}
+{{- end }}

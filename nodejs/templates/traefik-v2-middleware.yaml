@@ -1,0 +1,15 @@
+{{- if .Values.traefikV2.enabled }}
+{{- $name := include "libchart.name" . }}
+{{- $labels := include "libchart.labels" . }}
+{{ range $i := .Values.traefikV2.middlewares }}
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: "{{ $name }}-{{ $i.name }}"
+  labels:
+    {{- $labels | nindent 4 }}
+spec:
+  {{- toYaml $i.spec | nindent 2 }}
+{{- end }}
+{{- end }}

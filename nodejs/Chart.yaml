@@ -1,0 +1,8 @@
+apiVersion: v2
+description: Node.js Helm Chart
+name: nodejs
+version: 20.0.0
+dependencies:
+  - name: libchart
+    version: 4.2.0
+    repository: file://../libchart

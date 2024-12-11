@@ -1,0 +1,3 @@
+{{ if eq .Values.deployKind "deployment" }}
+{{- include "libchart.deployment.tpl" . -}}
+{{- end }}
